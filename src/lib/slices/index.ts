@@ -7,6 +7,7 @@ import Hero from './Hero/index.svelte';
 import ImageBlock from './ImageBlock/index.svelte';
 import RichText from './RichText/index.svelte';
 import TechList from './TechList/index.svelte';
+import VideoContent from './VideoContent/index.svelte';
 
 export const components = {
 	biography: Biography,
@@ -15,5 +16,6 @@ export const components = {
 	hero: Hero,
 	image_block: ImageBlock,
 	rich_text: RichText,
-	tech_list: TechList
+	tech_list: TechList,
+	video_content: VideoContent
 };

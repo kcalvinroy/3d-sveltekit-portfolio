@@ -181,7 +181,7 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 	Lang
 >;
 
-type ProjectDocumentDataSlicesSlice = RichTextSlice | ImageBlockSlice;
+type ProjectDocumentDataSlicesSlice = VideoContentSlice | RichTextSlice | ImageBlockSlice;
 
 /**
  * Content for Project documents
@@ -927,6 +927,48 @@ type TechListSliceVariation = TechListSliceDefault;
  */
 export type TechListSlice = prismic.SharedSlice<'tech_list', TechListSliceVariation>;
 
+/**
+ * Primary content in *VideoContent → Default → Primary*
+ */
+export interface VideoContentSliceDefaultPrimary {
+	/**
+	 * video field in *VideoContent → Default → Primary*
+	 *
+	 * - **Field Type**: Embed
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_content.default.primary.video
+	 * - **Documentation**: https://prismic.io/docs/field#embed
+	 */
+	video: prismic.EmbedField;
+}
+
+/**
+ * Default variation for VideoContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoContentSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<VideoContentSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *VideoContent*
+ */
+type VideoContentSliceVariation = VideoContentSliceDefault;
+
+/**
+ * VideoContent Shared Slice
+ *
+ * - **API ID**: `video_content`
+ * - **Description**: VideoContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoContentSlice = prismic.SharedSlice<'video_content', VideoContentSliceVariation>;
+
 declare module '@prismicio/client' {
 	interface CreateClient {
 		(
@@ -979,7 +1021,11 @@ declare module '@prismicio/client' {
 			TechListSliceDefaultPrimaryItemItem,
 			TechListSliceDefaultPrimary,
 			TechListSliceVariation,
-			TechListSliceDefault
+			TechListSliceDefault,
+			VideoContentSlice,
+			VideoContentSliceDefaultPrimary,
+			VideoContentSliceVariation,
+			VideoContentSliceDefault
 		};
 	}
 }
