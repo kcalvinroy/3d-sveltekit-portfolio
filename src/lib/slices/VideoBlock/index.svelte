@@ -20,8 +20,8 @@
 	</Heading>
 	<div class="aspect-w-16 aspect-h-9">
 		<iframe
-			width="auto"
-			height="auto"
+			width="840"
+			height="390"
 			src={slice.primary.video_link}
 			title={slice.primary.video_label}
 			frameborder="0"
