@@ -2,6 +2,7 @@
 	import type { Content } from '@prismicio/client';
 	import Bounded from '$lib/components/Bounded.svelte';
 	import Heading from '$lib/components/Heading.svelte';
+	import { PrismicRichText } from '@prismicio/svelte';
 
 	export let slice: Content.VideoBlockSlice;
 </script>
@@ -21,7 +22,7 @@
 		></iframe>
 		<div class="flex justify-between p-4">
 			<h3 class="text-lg font-bold mb-2">{slice.primary.video_label}</h3>
-			<p class="">{slice.primary.video_description}</p>
+			<p class=""><PrismicRichText field={slice.primary.video_description} />/p></p>
 		</div>
 	</div>
 	<Heading tag="h2" size="sm">
