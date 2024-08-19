@@ -13,7 +13,7 @@
 		{slice.primary.video_label}
 	</Heading>
 	<Heading tag="h2" size="sm">
-		{slice.primary.video_link.link_type.toString()}
+		{slice.primary.video_link}
 	</Heading>
 	<Heading tag="h2" size="sm">
 		{link}
