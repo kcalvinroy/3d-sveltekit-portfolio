@@ -19,9 +19,9 @@
 			referrerpolicy="origin"
 			allowfullscreen
 		></iframe>
-		<div class="flex items-center justify-between p-4">
-			<h5 class="text-lg font-bold mb-2">{slice.primary.video_label}</h5>
-			<p class="text-gray-600">{slice.primary.video_description}</p>
+		<div class="flex justify-between p-4">
+			<h3 class="text-lg font-bold mb-2">{slice.primary.video_label}</h3>
+			<p class="">{slice.primary.video_description}</p>
 		</div>
 	</div>
 	<Heading tag="h2" size="sm">
