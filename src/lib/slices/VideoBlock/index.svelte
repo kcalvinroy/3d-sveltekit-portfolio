@@ -12,12 +12,7 @@
 	<Heading tag="h2" size="sm">
 		{slice.primary.video_label}
 	</Heading>
-	<Heading tag="h2" size="sm">
-		{slice.primary.video_link}
-	</Heading>
-	<Heading tag="h2" size="sm">
-		{link}
-	</Heading>
+
 	<div class="aspect-w-16 aspect-h-9">
 		<iframe
 			width="840"
