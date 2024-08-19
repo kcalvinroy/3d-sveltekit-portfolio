@@ -13,7 +13,7 @@
 		{slice.primary.video_label}
 	</Heading>
 	<Heading tag="h2" size="sm">
-		{slice.primary.video_link}
+		{slice.primary.video_link.link_type.toString()}
 	</Heading>
 	<Heading tag="h2" size="sm">
 		{link}
@@ -22,7 +22,7 @@
 		<iframe
 			width="853"
 			height="480"
-			src="https://www.youtube.com/embed/9yIBuGwH2a0"
+			src={slice.primary.video_link}
 			title="Imagine Dragons - In Your Corner (Live) | Vevo Extended Play"
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

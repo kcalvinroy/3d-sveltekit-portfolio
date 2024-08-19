@@ -943,16 +943,6 @@ export type TechListSlice = prismic.SharedSlice<'tech_list', TechListSliceVariat
  */
 export interface VideoBlockSliceDefaultPrimary {
 	/**
-	 * Video Link field in *VideoBlock → Default → Primary*
-	 *
-	 * - **Field Type**: Link
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: video_block.default.primary.video_link
-	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-	 */
-	video_link: prismic.LinkField;
-
-	/**
 	 * Video Label field in *VideoBlock → Default → Primary*
 	 *
 	 * - **Field Type**: Text
@@ -961,6 +951,16 @@ export interface VideoBlockSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	video_label: prismic.KeyTextField;
+
+	/**
+	 * Video Link field in *VideoBlock → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_block.default.primary.video_link
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	video_link: prismic.KeyTextField;
 }
 
 /**
