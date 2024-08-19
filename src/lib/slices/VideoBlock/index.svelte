@@ -18,11 +18,11 @@
 	<Heading tag="h2" size="sm">
 		{link}
 	</Heading>
-	<div class="aspect-w-16 aspect-h-9">
+	<div class="center">
 		<iframe
-			width="853"
-			height="480"
-			src="'"+{link}+"'"
+			width="auto"
+			height="auto"
+			src={slice.primary.video_link}
 			title={slice.primary.video_label}
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
