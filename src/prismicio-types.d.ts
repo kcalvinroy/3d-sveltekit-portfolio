@@ -961,6 +961,16 @@ export interface VideoBlockSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	video_link: prismic.KeyTextField;
+
+	/**
+	 * Video Description field in *VideoBlock → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_block.default.primary.video_description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	video_description: prismic.RichTextField;
 }
 
 /**
@@ -989,48 +999,6 @@ type VideoBlockSliceVariation = VideoBlockSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type VideoBlockSlice = prismic.SharedSlice<'video_block', VideoBlockSliceVariation>;
-
-/**
- * Primary content in *VideoContent → Default → Primary*
- */
-export interface VideoContentSliceDefaultPrimary {
-	/**
-	 * video field in *VideoContent → Default → Primary*
-	 *
-	 * - **Field Type**: Embed
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: video_content.default.primary.video
-	 * - **Documentation**: https://prismic.io/docs/field#embed
-	 */
-	video: prismic.EmbedField;
-}
-
-/**
- * Default variation for VideoContent Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type VideoContentSliceDefault = prismic.SharedSliceVariation<
-	'default',
-	Simplify<VideoContentSliceDefaultPrimary>,
-	never
->;
-
-/**
- * Slice variation for *VideoContent*
- */
-type VideoContentSliceVariation = VideoContentSliceDefault;
-
-/**
- * VideoContent Shared Slice
- *
- * - **API ID**: `video_content`
- * - **Description**: VideoContent
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type VideoContentSlice = prismic.SharedSlice<'video_content', VideoContentSliceVariation>;
 
 declare module '@prismicio/client' {
 	interface CreateClient {
@@ -1088,11 +1056,7 @@ declare module '@prismicio/client' {
 			VideoBlockSlice,
 			VideoBlockSliceDefaultPrimary,
 			VideoBlockSliceVariation,
-			VideoBlockSliceDefault,
-			VideoContentSlice,
-			VideoContentSliceDefaultPrimary,
-			VideoContentSliceVariation,
-			VideoContentSliceDefault
+			VideoBlockSliceDefault
 		};
 	}
 }

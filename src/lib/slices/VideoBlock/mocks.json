@@ -12,6 +12,17 @@
 				"__TYPE__": "FieldContent",
 				"value": "evidence",
 				"type": "Text"
+			},
+			"video_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur anim pariatur officia amet labore consequat magna commodo dolore aliqua dolor incididunt id. Est culpa laboris ex do aliqua laboris amet culpa velit labore veniam labore laboris minim. Consequat proident irure elit amet nostrud sit velit officia occaecat labore magna minim excepteur sunt do."
+						}
+					}
+				]
 			}
 		},
 		"items": []

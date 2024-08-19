@@ -13,8 +13,8 @@
 
 	<div class="aspect-w-16 aspect-h-9">
 		<iframe
-			width="100%"
-			height="100%"
+			width="800"
+			height="450"
 			src={slice.primary.video_link}
 			title={slice.primary.video_label}
 			frameborder="0"
