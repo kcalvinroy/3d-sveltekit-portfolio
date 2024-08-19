@@ -77,6 +77,14 @@
 					"placeholder": "",
 					"select": null
 				}
+			},
+			"youtube_link": {
+				"type": "Link",
+				"config": {
+					"label": "Youtube link",
+					"placeholder": "",
+					"select": null
+				}
 			}
 		},
 		"Metadata": {

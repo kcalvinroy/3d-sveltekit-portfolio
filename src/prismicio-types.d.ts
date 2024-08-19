@@ -382,7 +382,18 @@ interface SettingsDocumentData {
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	twitter_link: prismic.LinkField /**
+	twitter_link: prismic.LinkField;
+
+	/**
+	 * Youtube link field in *Settings*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.youtube_link
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	youtube_link: prismic.LinkField /**
 	 * Meta title field in *Settings*
 	 *
 	 * - **Field Type**: Text
