@@ -7,9 +7,9 @@
 </script>
 
 <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-	<div class="card">
+	<div class="max-w-sm bg-white rounded-lg shadow-md">
 		<iframe
-			class="card-img"
+			class="rounded-t-lg"
 			width="800"
 			height="450"
 			src={slice.primary.video_link}
@@ -19,8 +19,10 @@
 			referrerpolicy="origin"
 			allowfullscreen
 		></iframe>
-		<h2 class="card-title">{slice.primary.video_label}</h2>
-		<p class="card-text">{slice.primary.video_description}</p>
+		<div class="flex items-center justify-between p-4">
+			<h5 class="text-lg font-bold mb-2">{slice.primary.video_label}</h5>
+			<p class="text-gray-600">{slice.primary.video_description}</p>
+		</div>
 	</div>
 	<Heading tag="h2" size="sm">
 		{slice.primary.video_label}
