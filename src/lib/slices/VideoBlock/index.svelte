@@ -4,8 +4,6 @@
 	import Heading from '$lib/components/Heading.svelte';
 
 	export let slice: Content.VideoBlockSlice;
-
-	let link: string = slice.primary.video_link.toString();
 </script>
 
 <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
