@@ -1,0 +1,21 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"video_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"video_label": {
+				"__TYPE__": "FieldContent",
+				"value": "poem",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

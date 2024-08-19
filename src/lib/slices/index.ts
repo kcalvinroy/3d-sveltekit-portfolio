@@ -7,6 +7,7 @@ import Hero from './Hero/index.svelte';
 import ImageBlock from './ImageBlock/index.svelte';
 import RichText from './RichText/index.svelte';
 import TechList from './TechList/index.svelte';
+import VideoBlock from './VideoBlock/index.svelte';
 import VideoContent from './VideoContent/index.svelte';
 
 export const components = {
@@ -17,5 +18,6 @@ export const components = {
 	image_block: ImageBlock,
 	rich_text: RichText,
 	tech_list: TechList,
+	video_block: VideoBlock,
 	video_content: VideoContent
 };

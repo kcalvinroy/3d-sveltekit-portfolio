@@ -181,7 +181,7 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 	Lang
 >;
 
-type ProjectDocumentDataSlicesSlice = VideoContentSlice | RichTextSlice | ImageBlockSlice;
+type ProjectDocumentDataSlicesSlice = VideoBlockSlice | RichTextSlice | ImageBlockSlice;
 
 /**
  * Content for Project documents
@@ -939,6 +939,58 @@ type TechListSliceVariation = TechListSliceDefault;
 export type TechListSlice = prismic.SharedSlice<'tech_list', TechListSliceVariation>;
 
 /**
+ * Primary content in *VideoBlock → Default → Primary*
+ */
+export interface VideoBlockSliceDefaultPrimary {
+	/**
+	 * Video Link field in *VideoBlock → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_block.default.primary.video_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	video_link: prismic.LinkField;
+
+	/**
+	 * Video Label field in *VideoBlock → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: video_block.default.primary.video_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	video_label: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for VideoBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoBlockSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<VideoBlockSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *VideoBlock*
+ */
+type VideoBlockSliceVariation = VideoBlockSliceDefault;
+
+/**
+ * VideoBlock Shared Slice
+ *
+ * - **API ID**: `video_block`
+ * - **Description**: VideoBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoBlockSlice = prismic.SharedSlice<'video_block', VideoBlockSliceVariation>;
+
+/**
  * Primary content in *VideoContent → Default → Primary*
  */
 export interface VideoContentSliceDefaultPrimary {
@@ -1033,6 +1085,10 @@ declare module '@prismicio/client' {
 			TechListSliceDefaultPrimary,
 			TechListSliceVariation,
 			TechListSliceDefault,
+			VideoBlockSlice,
+			VideoBlockSliceDefaultPrimary,
+			VideoBlockSliceVariation,
+			VideoBlockSliceDefault,
 			VideoContentSlice,
 			VideoContentSliceDefaultPrimary,
 			VideoContentSliceVariation,

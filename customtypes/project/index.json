@@ -39,7 +39,7 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
-						"video_content": {
+						"video_block": {
 							"type": "SharedSlice"
 						},
 						"rich_text": {
