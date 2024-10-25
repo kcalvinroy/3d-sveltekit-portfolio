@@ -1,6 +1,6 @@
 # Prismic + SvelteKit Porfolio Website
 
-Project built with Prismic, SvelteKit, Threejs, Tailwind css and Gsap.
+Project built with Prismic, SvelteKit with Typescript, Threejs, Tailwind css and Gsap.
 
 &nbsp;
 
