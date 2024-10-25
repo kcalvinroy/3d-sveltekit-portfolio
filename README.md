@@ -4,9 +4,9 @@ Project built with Prismic, SvelteKit, Tailwind css and Gsap.
 
 &nbsp;
 
-### Customize this website
+### Prismic
 
-Prismic. A headless content management system that has two Prismic packages installed:
+A headless content management system that has two Prismic packages installed:
 
 - `@prismicio/client` provides helpers for fetching content from Prismic
 - `@prismicio/svelte` provides Svelte components for rendering content from Prismic
