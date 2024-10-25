@@ -1,8 +1,6 @@
 # Prismic + SvelteKit Porfolio Website
 
-project built with [Prismic][prismic] and [SvelteKit][sveltekit] with Tailwind css and Gsap for animation.
-&nbsp;
-
+project built with Prismic, SvelteKit, Tailwind css and Gsap.
 
 &nbsp;
 
