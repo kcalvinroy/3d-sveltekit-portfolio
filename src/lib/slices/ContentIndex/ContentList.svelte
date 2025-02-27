@@ -57,7 +57,7 @@
 
 <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 border-b border-b-slate-100">
 	{#each items as post, index (post.id + index)}
-		<li class="relative group w-full opacity-100 pb-5" use:onItemEnter={index}>
+		<li class="relative group w-full opacity-0 pb-5" use:onItemEnter={index}>
 			<PrismicLink
 				document={post}
 				class="flex flex-col justify-between backdrop-blur-[1] bg-white/5 shadow-lg rounded-xl p-6 h-full transition-transform duration-200 transform group-hover:scale-105 group-hover:shadow-2xl"
