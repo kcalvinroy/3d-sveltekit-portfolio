@@ -3,7 +3,6 @@
 	import type { Content } from '@prismicio/client';
 
 	import Bounded from './Bounded.svelte';
-	import Heading from './Heading.svelte';
 	import { formatDate } from '$lib/components/formatDate';
 	import { components } from '$lib/slices';
 

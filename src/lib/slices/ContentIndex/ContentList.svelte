@@ -29,14 +29,14 @@
 			{
 				opacity: 1,
 				y: 0,
-				duration: 1,
-				ease: 'elastic.out(1,0.3)',
-				stagger: 0.2,
+				duration: 0.6,
+				ease: 'power2.out',
 				scrollTrigger: {
 					trigger: node,
-					start: 'top bottom-=100px',
-					end: 'bottom center',
-					toggleActions: 'play none none none'
+					start: 'top bottom-=50',
+					end: 'top center',
+					toggleActions: 'play none none none',
+					scrub: 1
 				}
 			}
 		);
