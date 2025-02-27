@@ -20,9 +20,5 @@
 		</div>
 	{/if}
 
-	<ContentList
-		{items}
-		fallbackItemImage={slice.primary.fallback_item_image}
-		viewMoreText={slice.primary.view_more_text}
-	/>
+	<ContentList {items} viewMoreText={slice.primary.view_more_text} />
 </Bounded>
