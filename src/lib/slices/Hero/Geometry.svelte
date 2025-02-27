@@ -75,6 +75,7 @@
 </script>
 
 <Threlte.Group position={position.map((p) => p * 2)}>
+	<Threlte.AmbientLight intensity={0.3} />
 	<Float
 		speed={5 * compoundRate}
 		rotationSpeed={5 * compoundRate}

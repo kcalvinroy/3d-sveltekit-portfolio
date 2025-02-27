@@ -101,6 +101,50 @@ export type BlogpostDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
+type LinkDocumentDataSlicesSlice = RichTextSlice;
+
+/**
+ * Content for Link documents
+ */
+interface LinkDocumentData {
+	/**
+	 * Linker field in *Link*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: link.linker
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	linker: prismic.Repeatable<prismic.LinkField<string, string, unknown, prismic.FieldState, never>>;
+
+	/**
+	 * Slice Zone field in *Link*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: link.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices: prismic.SliceZone<LinkDocumentDataSlicesSlice>;
+}
+
+/**
+ * Link document from Prismic
+ *
+ * - **API ID**: `link`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LinkDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
+	Simplify<LinkDocumentData>,
+	'link',
+	Lang
+>;
+
 type PageDocumentDataSlicesSlice =
 	| ContentIndexSlice
 	| ExperienceSlice
@@ -290,7 +334,7 @@ export interface SettingsDocumentDataNavItemItem {
 	 * - **API ID Path**: settings.nav_item[].link
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	link: prismic.LinkField;
+	link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
 	/**
 	 * Label field in *Settings → Nav Item*
@@ -338,7 +382,7 @@ interface SettingsDocumentData {
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	cta_link: prismic.LinkField;
+	cta_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
 	/**
 	 * CTA Label field in *Settings*
@@ -360,7 +404,7 @@ interface SettingsDocumentData {
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	github: prismic.LinkField;
+	github: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
 	/**
 	 * LinkedIn Link field in *Settings*
@@ -371,7 +415,7 @@ interface SettingsDocumentData {
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	linkedin: prismic.LinkField;
+	linkedin: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
 	/**
 	 * Twitter link field in *Settings*
@@ -382,7 +426,7 @@ interface SettingsDocumentData {
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	twitter_link: prismic.LinkField;
+	twitter_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
 	/**
 	 * Youtube link field in *Settings*
@@ -393,7 +437,7 @@ interface SettingsDocumentData {
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	youtube_link: prismic.LinkField /**
+	youtube_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never> /**
 	 * Meta title field in *Settings*
 	 *
 	 * - **Field Type**: Text
@@ -442,7 +486,12 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
-export type AllDocumentTypes = BlogpostDocument | PageDocument | ProjectDocument | SettingsDocument;
+export type AllDocumentTypes =
+	| BlogpostDocument
+	| LinkDocument
+	| PageDocument
+	| ProjectDocument
+	| SettingsDocument;
 
 /**
  * Primary content in *Biography → Default → Primary*
@@ -486,7 +535,7 @@ export interface BiographySliceDefaultPrimary {
 	 * - **API ID Path**: biography.default.primary.button_link
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	button_link: prismic.LinkField;
+	button_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
 	/**
 	 * Avatar field in *Biography → Default → Primary*
@@ -1008,11 +1057,25 @@ declare module '@prismicio/client' {
 		): prismic.Client<AllDocumentTypes>;
 	}
 
+	interface CreateWriteClient {
+		(
+			repositoryNameOrEndpoint: string,
+			options: prismic.WriteClientConfig
+		): prismic.WriteClient<AllDocumentTypes>;
+	}
+
+	interface CreateMigration {
+		(): prismic.Migration<AllDocumentTypes>;
+	}
+
 	namespace Content {
 		export type {
 			BlogpostDocument,
 			BlogpostDocumentData,
 			BlogpostDocumentDataSlicesSlice,
+			LinkDocument,
+			LinkDocumentData,
+			LinkDocumentDataSlicesSlice,
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,

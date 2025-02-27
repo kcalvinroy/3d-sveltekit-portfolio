@@ -1,23 +1,14 @@
 <script lang="ts">
-	import {
-		asImageSrc,
-		isFilled,
-		type Content,
-		type ImageField,
-		type KeyTextField
-	} from '@prismicio/client';
+	import { asImageSrc, isFilled, type Content, type ImageField } from '@prismicio/client';
 	import { PrismicLink } from '@prismicio/svelte';
 	import { gsap } from 'gsap';
 	import type { Action } from 'svelte/action';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-	import IconArrow from '~icons/ic/baseline-arrow-outward';
-
 	gsap.registerPlugin(ScrollTrigger);
 
 	export let items: Content.BlogpostDocument[] | Content.ProjectDocument[];
 	export let fallbackItemImage: ImageField;
-	export let viewMoreText: KeyTextField = 'Read More';
 
 	let lastMousePos = { x: 0, y: 0 };
 	let currentIndex: number | undefined;
